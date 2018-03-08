@@ -3,7 +3,7 @@ import { GenericApiItemEditor } from '../../generic-api-item-editor.';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BaseLoopBackApi } from '../../../sdk';
 
-export class LoopbackApiItemEditorComponent<Model, ModelApi extends BaseLoopBackApi> implements GenericApiItemEditor {
+export class LoopbackApiItemEditorComponent<Model> implements GenericApiItemEditor {
 
   public item: Model;
   public className;
@@ -14,7 +14,7 @@ export class LoopbackApiItemEditorComponent<Model, ModelApi extends BaseLoopBack
   backRoute;
   baseRoute = '/dashboard';
 
-  constructor(protected api: ModelApi, protected route: ActivatedRoute) {
+  constructor(protected api, protected route: ActivatedRoute) {
     const model = this.api.getModel();
     this.item = new model();
     this.className = this.item.constructor.name;

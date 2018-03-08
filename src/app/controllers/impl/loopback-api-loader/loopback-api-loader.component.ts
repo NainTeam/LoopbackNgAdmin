@@ -9,7 +9,7 @@ export interface LoaderSearch {
   properties?: [string];
 }
 
-export class LoopbackApiLoaderComponent<Model, ModelApi extends BaseLoopBackApi> implements GenericApiLoader {
+export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
   static sdkModels = null;
   loaderConfig = {
     page: 0,
@@ -39,7 +39,7 @@ export class LoopbackApiLoaderComponent<Model, ModelApi extends BaseLoopBackApi>
 
   apiRoute = '';
 
-  constructor(protected loaderApi: ModelApi) {
+  constructor(protected loaderApi) {
     this.loadModels();
     this.loadModel();
     this.loadRoutes();
