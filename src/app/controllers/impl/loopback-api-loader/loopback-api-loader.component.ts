@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, forwardRef } from '@angular/core';
+import { Component, OnInit, Inject, forwardRef, Injectable } from '@angular/core';
 import { GenericApiLoader } from '../../generic-api-loader.';
 import { BaseLoopBackApi, SDKModels, User } from '../../../sdk';
 
@@ -39,7 +39,7 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
 
   apiRoute = '';
 
-  constructor(protected loaderApi) {
+  constructor(protected loaderApi, @Injectable() private models: SDKModels) {
     this.loadModels();
     this.loadModel();
     this.loadRoutes();
@@ -47,7 +47,7 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
 
   private loadModels() {
     if (!LoopbackApiLoaderComponent.sdkModels) {
-      LoopbackApiLoaderComponent.sdkModels = new SDKModels();
+      LoopbackApiLoaderComponent.sdkModels = this.models;
     }
   }
 
