@@ -12,13 +12,13 @@ export interface CookieInterface { [key: string]: any }
 @Injectable()
 export class CookieBrowser {
   /**
-   * @type {CookieInterface}
+   * 
    **/
   private cookies: CookieInterface = {};
   /**
    * @method get
-   * @param {string} key Cookie key name
-   * @return {any}
+   * @param key Cookie key name
+   * @return
    * @description
    * The getter will return any type of data persisted in cookies.
    **/
@@ -38,10 +38,10 @@ export class CookieBrowser {
   }
   /**
    * @method set
-   * @param {string} key Cookie key name
-   * @param {any} value Any value
-   * @param {Date=} expires The date of expiration (Optional)
-   * @return {void}
+   * @param key Cookie key name
+   * @param value Any value
+   * @param expires The date of expiration (Optional)
+   * @return
    * @description
    * The setter will return any type of data persisted in cookies.
    **/
@@ -52,8 +52,8 @@ export class CookieBrowser {
   }
   /**
    * @method remove
-   * @param {string} key Cookie key name
-   * @return {void}
+   * @param key Cookie key name
+   * @return
    * @description
    * This method will remove a cookie from the client.
    **/
@@ -63,8 +63,8 @@ export class CookieBrowser {
   }
   /**
    * @method parse
-   * @param {any} value Input data expected to be JSON
-   * @return {void}
+   * @param value Input data expected to be JSON
+   * @return
    * @description
    * This method will parse the string as JSON if possible, otherwise will
    * return the value itself.

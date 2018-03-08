@@ -50,12 +50,12 @@ export abstract class BaseLoopBackApi {
 
   /**
    * @method request
-   * @param {string}  method      Request method (GET, POST, PUT)
-   * @param {string}  url         Request url (my-host/my-url/:id)
-   * @param {any}     routeParams Values of url parameters
-   * @param {any}     urlParams   Parameters for building url (filter and other)
-   * @param {any}     postBody    Request postBody
-   * @return {Observable<any>}
+   * @param  method      Request method (GET, POST, PUT)
+   * @param  url         Request url (my-host/my-url/:id)
+   * @param     routeParams Values of url parameters
+   * @param     urlParams   Parameters for building url (filter and other)
+   * @param     postBody    Request postBody
+   * @return
    * @description
    * This is a core method, every HTTP Call will be done from here, every API Service will
    * extend this class and use this method to get RESTful communication.
@@ -141,9 +141,9 @@ export abstract class BaseLoopBackApi {
    * @method authenticate
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {string} url Server URL
-   * @param {Headers} headers HTTP Headers
-   * @return {void}
+   * @param url Server URL
+   * @param headers HTTP Headers
+   * @return
    * @description
    * This method will try to authenticate using either an access_token or basic http auth
    */
@@ -159,8 +159,8 @@ export abstract class BaseLoopBackApi {
    * @method create
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {T} data Generic data type
-   * @return {Observable<T>}
+   * @param data Generic data type
+   * @return
    * @description
    * Generic create method
    */
@@ -175,8 +175,8 @@ export abstract class BaseLoopBackApi {
    * @method onCreate
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {T[]} data Generic data type array
-   * @return {Observable<T[]>}
+   * @param data Generic data type array
+   * @return
    * @description
    * Generic pubsub oncreate many method
    */
@@ -192,8 +192,8 @@ export abstract class BaseLoopBackApi {
    * @method createMany
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {T[]} data Generic data type array
-   * @return {Observable<T[]>}
+   * @param data Generic data type array
+   * @return
    * @description
    * Generic create many method
    */
@@ -209,8 +209,8 @@ export abstract class BaseLoopBackApi {
    * @method onCreateMany
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {T[]} data Generic data type array
-   * @return {Observable<T[]>}
+   * @param data Generic data type array
+   * @return
    * @description
    * Generic create many method
    */
@@ -226,8 +226,8 @@ export abstract class BaseLoopBackApi {
    * @method findById
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @param {any} data Generic data type
-   * @return {Observable<T>}
+   * @param data Generic data type
+   * @return
    * @description
    * Generic findById method
    */
@@ -246,7 +246,7 @@ export abstract class BaseLoopBackApi {
    * @method find
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T[+>}
+   * @return
    * @description
    * Generic find method
    */
@@ -262,7 +262,7 @@ export abstract class BaseLoopBackApi {
    * @method exists
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T[]>}
+   * @return
    * @description
    * Generic exists method
    */
@@ -278,7 +278,7 @@ export abstract class BaseLoopBackApi {
    * @method findOne
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic findOne method
    */
@@ -295,7 +295,7 @@ export abstract class BaseLoopBackApi {
    * @method updateAll
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T[]>}
+   * @return
    * @description
    * Generic updateAll method
    */
@@ -313,7 +313,7 @@ export abstract class BaseLoopBackApi {
    * @method onUpdateAll
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T[]>}
+   * @return
    * @description
    * Generic pubsub onUpdateAll method
    */
@@ -331,7 +331,7 @@ export abstract class BaseLoopBackApi {
    * @method deleteById
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic deleteById method
    */
@@ -348,7 +348,7 @@ export abstract class BaseLoopBackApi {
    * @method onDeleteById
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic pubsub onDeleteById method
    */
@@ -364,7 +364,7 @@ export abstract class BaseLoopBackApi {
    * @method count
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<{ count: number }>}
+   * @return
    * @description
    * Generic count method
    */
@@ -382,7 +382,7 @@ export abstract class BaseLoopBackApi {
    * @method updateAttributes
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic updateAttributes method
    */
@@ -399,7 +399,7 @@ export abstract class BaseLoopBackApi {
    * @method onUpdateAttributes
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic onUpdateAttributes method
    */
@@ -415,7 +415,7 @@ export abstract class BaseLoopBackApi {
    * @method upsert
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic upsert method
    */
@@ -431,7 +431,7 @@ export abstract class BaseLoopBackApi {
    * @method onUpsert
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic pubsub onUpsert method
    */
@@ -446,7 +446,7 @@ export abstract class BaseLoopBackApi {
    * @method upsertPatch
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic upsert method using patch http method
    */
@@ -462,7 +462,7 @@ export abstract class BaseLoopBackApi {
    * @method onUpsertPatch
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic pubsub onUpsertPatch method using patch http method
    */
@@ -477,7 +477,7 @@ export abstract class BaseLoopBackApi {
    * @method upsertWithWhere
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic upsertWithWhere method
    */
@@ -496,7 +496,7 @@ export abstract class BaseLoopBackApi {
    * @method onUpsertWithWhere
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic pubsub onUpsertWithWhere method
    */
@@ -514,7 +514,7 @@ export abstract class BaseLoopBackApi {
    * @method replaceOrCreate
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic replaceOrCreate method
    */
@@ -531,7 +531,7 @@ export abstract class BaseLoopBackApi {
    * @method onReplaceOrCreate
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic onReplaceOrCreate method
    */
@@ -547,7 +547,7 @@ export abstract class BaseLoopBackApi {
    * @method replaceById
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic replaceById method
    */
@@ -564,7 +564,7 @@ export abstract class BaseLoopBackApi {
    * @method onReplaceById
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<T>}
+   * @return
    * @description
    * Generic onReplaceById method
    */
@@ -580,7 +580,7 @@ export abstract class BaseLoopBackApi {
    * @method createChangeStream
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {Observable<any>}
+   * @return
    * @description
    * Generic createChangeStream method
    */
@@ -605,7 +605,7 @@ export abstract class BaseLoopBackApi {
    * @method getModelName
    * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
    * @license MIT
-   * @return {string}
+   * @return
    * @description
    * Abstract getModelName method
    */

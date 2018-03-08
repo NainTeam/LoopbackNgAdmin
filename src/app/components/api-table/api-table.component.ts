@@ -13,7 +13,7 @@ export class ApiTableComponent implements OnInit {
   tableModel;
 
   @Input()
-  properties: [string];
+  properties;
 
   tableProperties = [];
 

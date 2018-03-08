@@ -15,16 +15,16 @@ import { SDKToken } from '../../models/BaseModels';
 @Injectable()
 export class LoopBackAuth {
   /**
-   * @type {SDKToken}
+   * 
    **/
   private token: SDKToken = new SDKToken();
   /**
-   * @type {string}
+   * 
    **/
   protected prefix: string = '$LoopBackSDK$';
   /**
    * @method constructor
-   * @param {InternalStorage} storage Internal Storage Driver
+   * @param storage Internal Storage Driver
    * @description
    * The constructor will initialize the token loading data from storage
    **/
@@ -38,8 +38,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setRememberMe
-   * @param {boolean} value Flag to remember credentials
-   * @return {void}
+   * @param value Flag to remember credentials
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials
    **/
@@ -48,8 +48,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setUser
-   * @param {any} user Any type of user model
-   * @return {void}
+   * @param user Any type of user model
+   * @return
    * @description
    * This method will update the user information and persist it if the
    * rememberMe flag is set.
@@ -60,8 +60,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setToken
-   * @param {SDKToken} token SDKToken or casted AccessToken instance
-   * @return {void}
+   * @param token SDKToken or casted AccessToken instance
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials
    **/
@@ -71,7 +71,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getToken
-   * @return {void}
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials.
    **/
@@ -80,7 +80,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getAccessTokenId
-   * @return {string}
+   * @return
    * @description
    * This method will return the actual token string, not the object instance.
    **/
@@ -89,7 +89,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getCurrentUserId
-   * @return {any}
+   * @return
    * @description
    * This method will return the current user id, it can be number or string.
    **/
@@ -98,7 +98,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getCurrentUserData
-   * @return {any}
+   * @return
    * @description
    * This method will return the current user instance.
    **/
@@ -107,7 +107,7 @@ export class LoopBackAuth {
   }
   /**
    * @method save
-   * @return {boolean} Whether or not the information was saved
+   * @return Whether or not the information was saved
    * @description
    * This method will save in either local storage or cookies the current credentials.
    * But only if rememberMe is enabled.
@@ -125,8 +125,8 @@ export class LoopBackAuth {
   };
   /**
    * @method load
-   * @param {string} prop Property name
-   * @return {any} Any information persisted in storage
+   * @param prop Property name
+   * @return Any information persisted in storage
    * @description
    * This method will load either from local storage or cookies the provided property.
    **/
@@ -135,7 +135,7 @@ export class LoopBackAuth {
   }
   /**
    * @method clear
-   * @return {void}
+   * @return
    * @description
    * This method will clear cookies or the local storage.
    **/
@@ -145,7 +145,7 @@ export class LoopBackAuth {
   }
   /**
    * @method persist
-   * @return {void}
+   * @return
    * @description
    * This method saves values to storage
    **/

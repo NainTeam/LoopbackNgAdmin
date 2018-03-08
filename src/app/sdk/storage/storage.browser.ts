@@ -12,8 +12,8 @@ import { Injectable } from '@angular/core';
 export class StorageBrowser {
   /**
    * @method get
-   * @param {string} key Storage key name
-   * @return {any}
+   * @param key Storage key name
+   * @return
    * @description
    * The getter will return any type of data persisted in localStorage.
    **/
@@ -23,9 +23,9 @@ export class StorageBrowser {
   }
   /**
    * @method set
-   * @param {string} key Storage key name
-   * @param {any} value Any value
-   * @return {void}
+   * @param key Storage key name
+   * @param value Any value
+   * @return
    * @description
    * The setter will return any type of data persisted in localStorage.
    **/
@@ -37,8 +37,8 @@ export class StorageBrowser {
   }
   /**
    * @method remove
-   * @param {string} key Storage key name
-   * @return {void}
+   * @param key Storage key name
+   * @return
    * @description
    * This method will remove a localStorage item from the client.
    **/
@@ -51,8 +51,8 @@ export class StorageBrowser {
   }
   /**
    * @method parse
-   * @param {any} value Input data expected to be JSON
-   * @return {void}
+   * @param value Input data expected to be JSON
+   * @return
    * @description
    * This method will parse the string as JSON if possible, otherwise will
    * return the value itself.

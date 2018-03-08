@@ -34,11 +34,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for accessTokens.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {any} fk Foreign key for accessTokens
+   *  fk Foreign key for accessTokens
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -64,11 +64,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for accessTokens.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {any} fk Foreign key for accessTokens
+   *  fk Foreign key for accessTokens
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -91,15 +91,15 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for accessTokens.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {any} fk Foreign key for accessTokens
+   *  fk Foreign key for accessTokens
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -127,11 +127,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Queries accessTokens of Admin.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} filter 
+   *  filter 
    *
-   * @returns {object[]} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -157,13 +157,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in accessTokens of this model.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -190,9 +190,9 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Deletes all accessTokens of this model.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -214,11 +214,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Counts accessTokens of Admin.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} where Criteria to match model instances
+   *  where Criteria to match model instances
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -243,11 +243,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Patch an existing model instance or insert a new one into the data source.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    *  - `data` – `{object}` - Model instance data
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -272,13 +272,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    *  - `data` – `{object}` - An object of model property name/value pairs
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -305,18 +305,18 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Login a user with username/email and password.
    *
-   * @param {string} include Related objects to include in the response. See the description of return value for more details.
+   * @param include Related objects to include in the response. See the description of return value for more details.
    *   Default value: `user`.
    *
    *  - `rememberMe` - `boolean` - Whether the authentication credentials
    *     should be remembered in localStorage across app/browser restarts.
    *     Default: `true`.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -353,11 +353,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Logout a user with access token.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method does not accept any data. Supply an empty object.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -379,13 +379,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Trigger user's identity verification with configured verifyOptions
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method does not accept any data. Supply an empty object.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -407,13 +407,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Confirm a user registration with identity verification token.
    *
-   * @param {string} uid 
+   * @param uid 
    *
-   * @param {string} token 
+   * @param token 
    *
-   * @param {string} redirect 
+   * @param redirect 
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -436,11 +436,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Reset password for a user with email.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -462,13 +462,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Change a user's password.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    *  - `oldPassword` – `{string}` - 
    *
    *  - `newPassword` – `{string}` - 
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -493,11 +493,11 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Reset user's password via a password-reset token.
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    *  - `newPassword` – `{string}` - 
    *
-   * @returns {object} An empty reference that will be
+   * @returns An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -521,13 +521,13 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in accessTokens of this model.
    *
-   * @param {any} id Admin id
+   *  id Admin id
    *
-   * @param {object} data Request data.
+   *  data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns {object[]} An empty reference that will be
+   * @returns  An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -600,7 +600,6 @@ export class AdminApi extends BaseLoopBackApi {
   /**
    * @name sdk.Admin#isAuthenticated
    *
-   * @returns {boolean} True if the current user is authenticated (logged in).
    */
   public isAuthenticated() {
     return !(this.getCurrentId() === '' || this.getCurrentId() == null || this.getCurrentId() == 'null');

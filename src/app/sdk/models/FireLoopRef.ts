@@ -6,7 +6,6 @@ import 'rxjs/add/operator/merge';
 import { LoopBackFilter, StatFilter } from './index';
 import { SocketConnection } from '../sockets/socket.connections';
 /**
- * @class FireLoopRef<T>
  * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
  * @license MIT
  * @description
@@ -25,10 +24,10 @@ export class FireLoopRef<T> {
   private disposable: { [key: string]: any } = {};
   /**
   * @method constructor
-  * @param {any} model The model we want to create a reference
-  * @param {SocketConnection} socket Socket connection to handle events
-  * @param {FireLoopRef<any>} parent Parent FireLoop model reference
-  * @param {string} relationship The defined model relationship
+  * @param model The model we want to create a reference
+  * @param socket Socket connection to handle events
+  * @param parent Parent FireLoop model reference
+  * @param relationship The defined model relationship
   * @description
   * The constructor will receive the required parameters and then will register this reference
   * into the server, needed to allow multiple references for the same model.
@@ -49,7 +48,7 @@ export class FireLoopRef<T> {
   }
   /**
   * @method dispose
-  * @return {void}
+  * @return
   * @description
   * This method is super important to avoid memory leaks in the server.
   * This method requires to be called on components destroy
@@ -69,8 +68,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method upsert
-  * @param {T} data Persisted model instance
-  * @return {Observable<T>}
+  * @param data Persisted model instance
+  * @return
   * @description
   * Operation wrapper for upsert function.
   **/
@@ -79,8 +78,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method create
-  * @param {T} data Persisted model instance
-  * @return {Observable<T>}
+  * @param data Persisted model instance
+  * @return
   * @description
   * Operation wrapper for create function.
   **/
@@ -89,8 +88,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method remove
-  * @param {T} data Persisted model instance
-  * @return {Observable<T>}
+  * @param data Persisted model instance
+  * @return
   * @description
   * Operation wrapper for remove function.
   **/
@@ -99,10 +98,10 @@ export class FireLoopRef<T> {
   }
   /**
   * @method remote
-  * @param {string} method Remote method name
-  * @param {any[]=} params Parameters to be applied into the remote method
-  * @param {boolean} broadcast Flag to define if the method results should be broadcasted
-  * @return {Observable<any>}
+  * @param method Remote method name
+  * @param params Parameters to be applied into the remote method
+  * @param broadcast Flag to define if the method results should be broadcasted
+  * @return
   * @description
   * This method calls for any remote method. It is flexible enough to
   * allow you call either built-in or custom remote methods.
@@ -116,8 +115,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method onRemote
-  * @param {string} method Remote method name
-  * @return {Observable<any>}
+  * @param method Remote method name
+  * @return
   * @description
   * This method listen for public broadcasted remote method results. If the remote method
   * execution is not public only the owner will receive the result data.
@@ -133,9 +132,9 @@ export class FireLoopRef<T> {
   }
   /**
   * @method on
-  * @param {string} event Event name
-  * @param {LoopBackFilter} filter LoopBack query filter
-  * @return {Observable<T>}
+  * @param event Event name
+  * @param filter LoopBack query filter
+  * @return
   * @description
   * Listener for different type of events. Valid events are:
   *   - change (Triggers on any model change -create, update, remove-)
@@ -167,8 +166,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method stats
-  * @param {LoopBackFilter=} filter LoopBack query filter
-  * @return {Observable<T>}
+  * @param filter LoopBack query filter
+  * @return
   * @description
   * Listener for real-time statistics, will trigger on every
   * statistic modification.
@@ -179,8 +178,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method make
-  * @param {any} instance Persisted model instance reference
-  * @return {Observable<T>}
+  * @param instance Persisted model instance reference
+  * @return
   * @description
   * This method will set a model instance into this a new FireLoop Reference.
   * This allows to persiste parentship when creating related instances.
@@ -196,8 +195,8 @@ export class FireLoopRef<T> {
   }
   /**
   * @method child
-  * @param {string} relationship A defined model relationship
-  * @return {FireLoopRef<T>}
+  * @param relationship A defined model relationship
+  * @return
   * @description
   * This method creates child references, which will persist related model
   * instances. e.g. Room.messages, where messages belongs to a specific Room.
@@ -224,9 +223,9 @@ export class FireLoopRef<T> {
   }
   /**
   * @method pull
-  * @param {string} event Event name
-  * @param {any} request Type of request, can be LB-only filter or FL+LB filter
-  * @return {Observable<T>}
+  * @param event Event name
+  * @param request Type of request, can be LB-only filter or FL+LB filter
+  * @return
   * @description
   * This method will pull initial data from server
   **/
@@ -246,9 +245,9 @@ export class FireLoopRef<T> {
   }
   /**
   * @method broadcasts
-  * @param {string} event Event name
-  * @param {any} request Type of request, can be LB-only filter or FL+LB filter
-  * @return {Observable<T>}
+  * @param event Event name
+  * @param request Type of request, can be LB-only filter or FL+LB filter
+  * @return
   * @description
   * This will listen for public broadcasts announces and then request
   * for data according a specific client request, not shared with other clients.
@@ -274,9 +273,9 @@ export class FireLoopRef<T> {
   }
   /**
   * @method operation
-  * @param {string} event Event name
-  * @param {any} data Any type of data sent to the server
-  * @return {Observable<T>}
+  * @param event Event name
+  * @param data Any type of data sent to the server
+  * @return
   * @description
   * This internal method will run operations depending on current context 
   **/
@@ -314,7 +313,7 @@ export class FireLoopRef<T> {
   }
   /**
   * @method buildId
-  * @return {number}
+  * @return
   * @description
   * This internal method build an ID for this reference, this allows to have
   * multiple references for the same model or relationships.

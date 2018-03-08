@@ -38,8 +38,8 @@ export class SocketConnection {
   public authenticated: boolean = false;
   /**
    * @method constructor
-   * @param {SocketDriver} driver Socket IO Driver
-   * @param {NgZone} zone Angular 2 Zone
+   * @param driver Socket IO Driver
+   * @param zone Angular 2 Zone
    * @description
    * The constructor will set references for the shared hot observables from
    * the class subjects. Then it will subscribe each of these observables
@@ -64,8 +64,8 @@ export class SocketConnection {
   }
   /**
    * @method connect
-   * @param {AccessToken} token AccesToken instance
-   * @return {void}
+   * @param token AccesToken instance
+   * @return
    * @description
    * This method will create a new socket connection when not previously established.
    * If there is a broken connection it will re-connect.
@@ -113,7 +113,7 @@ export class SocketConnection {
   }
   /**
    * @method isConnected
-   * @return {boolean}
+   * @return
    * @description
    * This method will return true or false depending on established connections
    **/
@@ -122,9 +122,9 @@ export class SocketConnection {
   }
   /**
    * @method on
-   * @param {string} event Event name
-   * @param {Function} handler Event listener handler
-   * @return {void}
+   * @param event Event name
+   * @param handler Event listener handler
+   * @return
    * @description
    * This method listen for server events from the current WebSocket connection.
    * This method is a facade that will wrap the original "on" method and run it
@@ -135,9 +135,9 @@ export class SocketConnection {
   }
   /**
    * @method emit
-   * @param {string} event Event name
-   * @param {any=} data Any type of data
-   * @return {void}
+   * @param event Event name
+   * @param data Any type of data
+   * @return
    * @description
    * This method will send any type of data to the server according the event set.
    **/
@@ -150,9 +150,9 @@ export class SocketConnection {
   }
   /**
    * @method removeListener
-   * @param {string} event Event name
-   * @param {Function} handler Event listener handler
-   * @return {void}
+   * @param event Event name
+   * @param handler Event listener handler
+   * @return
    * @description
    * This method will wrap the original "on" method and run it within the Angular Zone
    * Note: off is being used since the nativescript socket io client does not provide
@@ -165,9 +165,9 @@ export class SocketConnection {
   }
   /**
    * @method removeAllListeners
-   * @param {string} event Event name
-   * @param {Function} handler Event listener handler
-   * @return {void}
+   * @param event Event name
+   * @param handler Event listener handler
+   * @return
    * @description
    * This method will wrap the original "on" method and run it within the Angular Zone
    * Note: off is being used since the nativescript socket io client does not provide
@@ -180,7 +180,7 @@ export class SocketConnection {
   }
   /**
    * @method disconnect
-   * @return {void}
+   * @return
    * @description
    * This will disconnect the client from the server
    **/
@@ -189,7 +189,7 @@ export class SocketConnection {
   }
   /**
    * @method heartbeater
-   * @return {void}
+   * @return
    * @description
    * This will keep the connection as active, even when users are not sending
    * data, this avoids disconnection because of a connection not being used.

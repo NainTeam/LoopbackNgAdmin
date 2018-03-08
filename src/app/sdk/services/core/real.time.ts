@@ -28,9 +28,9 @@ export class RealTime {
   private sharedOnReady: Observable<string> = this.onReadySubject.asObservable().share();
   /**
   * @method constructor
-  * @param {SocketConnection} connection WebSocket connection service
-  * @param {SDKModels} models Model provider service
-  * @param {LoopBackAuth} auth LoopBack authentication service
+  * @param connection WebSocket connection service
+  * @param models Model provider service
+  * @param auth LoopBack authentication service
   * @description
   * It will intialize the shared on ready communication channel.
   **/
@@ -43,7 +43,7 @@ export class RealTime {
   }
   /**
   * @method onDisconnect
-  * @return {Observable<any>} 
+  * @return 
   * @description
   * Will trigger when Real-Time Service is disconnected from server.
   **/
@@ -52,7 +52,7 @@ export class RealTime {
   }
   /**
   * @method onAuthenticated
-  * @return {Observable<any>} 
+  * @return 
   * @description
   * Will trigger when Real-Time Service is authenticated with the server.
   **/
@@ -61,7 +61,7 @@ export class RealTime {
   }
   /**
   * @method onUnAuthorized
-  * @return {Observable<any>} 
+  * @return 
   * @description
   * Will trigger when Real-Time Service is not authorized to connect with the server.
   **/
@@ -70,7 +70,7 @@ export class RealTime {
   }
   /**
   * @method onReady
-  * @return {Observable<any>} 
+  * @return 
   * @description
   * Will trigger when Real-Time Service is Ready for broadcasting.
   * and will register connection flow events to notify subscribers.

@@ -12,9 +12,9 @@ import * as io from 'socket.io-client';
 export class SocketBrowser {
   /**
    * @method connect
-   * @param {string} url URL path to connect with the server.
-   * @param {any} options Any socket.io v1 =< valid options
-   * @return {any} Not currently a socket.io-client for web Typings implemented.
+   * @param url URL path to connect with the server.
+   * @param options Any socket.io v1 =< valid options
+   * @return Not currently a socket.io-client for web Typings implemented.
    * @description
    * This method will return a valid socket connection.  
    **/

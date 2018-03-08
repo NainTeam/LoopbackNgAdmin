@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { GenericApiLoader } from '../../generic-api-loader.';
-import { BaseLoopBackApi, SDKModels } from '../../../sdk';
+import { BaseLoopBackApi, SDKModels, User } from '../../../sdk';
 
 
 export interface LoaderSearch {
@@ -9,37 +9,35 @@ export interface LoaderSearch {
   properties?: [string];
 }
 
-
-
 export class LoopbackApiLoaderComponent<Model, ModelApi extends BaseLoopBackApi> implements GenericApiLoader {
-  static sdkModels;
+  static sdkModels = null;
   loaderConfig = {
     page: 0,
     limit: 15,
     order: 'date'
   };
 
-  public className;
+  public className = '';
 
   protected loaderPage = this.loaderConfig.page;
 
   loaderItems: [Model];
 
-  loaderCount;
+  loaderCount = 0;
 
-  protected loaderSearch;
+  protected loaderSearch: LoaderSearch = { property: '', value: '' };
 
-  loaderItemModel;
+  loaderItemModel = User;
 
-  modelProperties;
-  modelDefinition;
+  modelProperties = {};
+  modelDefinition = User.getModelDefinition();
 
   baseRoute = '/dashboard';
 
   createRoute = '/dashboard/topics/create';
   editRoute = '/dashboard/topics';
 
-  apiRoute;
+  apiRoute = '';
 
   constructor(protected loaderApi: ModelApi) {
     this.loadModels();
