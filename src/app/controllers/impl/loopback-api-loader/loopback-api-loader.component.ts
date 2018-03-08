@@ -39,7 +39,7 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
 
   apiRoute = '';
 
-  constructor(protected loaderApi, @Injectable() private models: SDKModels) {
+  constructor(protected loaderApi, private models) {
     this.loadModels();
     this.loadModel();
     this.loadRoutes();
@@ -48,6 +48,7 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
   private loadModels() {
     if (!LoopbackApiLoaderComponent.sdkModels) {
       LoopbackApiLoaderComponent.sdkModels = this.models;
+      console.log(this.models);
     }
   }
 
