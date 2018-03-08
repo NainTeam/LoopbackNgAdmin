@@ -1,0 +1,12 @@
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th *ngFor="let item of tableProperties" class="text-capitalize" scope="col"> {{item.name}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr [routerLink]="[route, item.id]" app-api-row *ngFor="let item of tableItems" [rowItem]="item" [tableProperties]="tableProperties">
+    </tr>
+  </tbody>
+</table>

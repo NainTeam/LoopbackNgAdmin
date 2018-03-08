@@ -1,0 +1,16 @@
+<td *ngFor="let prop of tableProperties" >
+
+  <div [ngSwitch]="prop.name.toLowerCase()">
+    <span *ngSwitchCase="'date'">
+      {{rowItem[prop.name] | date}}
+    </span>
+
+    <span *ngSwitchDefault>
+      {{rowItem[prop.name]}}
+    </span>
+  </div>
+</td>
+
+<td>
+
+</td>

@@ -1,0 +1,12 @@
+<nav aria-label="Page navigation example">
+  {{1+(currentPage*limit)}}-{{getLastNumber()}} of {{totalCount}}
+  <ul class="pagination justify-content-end">
+    <li class="page-item" [class.disabled]="currentPage==0">
+      <a class="page-link" (click)="onPrev()" tabindex="-1">Previous</a>
+    </li>
+    
+    <li class="page-item" [class.disabled]="isDisabled()">
+      <a class="page-link" (click)="onNext()">Next</a>
+    </li>
+  </ul>
+</nav>

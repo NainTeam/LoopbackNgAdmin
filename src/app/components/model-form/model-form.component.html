@@ -1,0 +1,31 @@
+<div class="container">
+  <ng-content select="[header]"></ng-content>
+  <hr>
+
+  <form (ngSubmit)="submitted()">
+    <ng-content select="[formTop]"></ng-content>
+    <div class="form-group row" *ngFor="let element of formProperties">
+      <label for="staticEmail" class="col-sm-2 col-form-label">{{element.name}}</label>
+      <div class="col-sm-10" [ngSwitch]="element.type" *ngIf="element.name !='id'; else idInput">
+        <input type="checkbox" class="form-control" [name]="element.name" [(ngModel)]="item[element.name]" *ngSwitchCase="'boolean'">
+        <input type="email" class="form-control" [name]="element.name" [(ngModel)]="item[element.name]" *ngSwitchCase="'email'">
+        <textarea class="form-control" [name]="element.name" [(ngModel)]="item[element.name]" *ngSwitchCase="'textarea'">
+        </textarea>
+        <div [froalaEditor] *ngSwitchCase="'rtext'" [(froalaModel)]="item[element.name]">
+          {{item[element.name]}}
+        </div>
+        <input type="text" class="form-control" [name]="element.name" [(ngModel)]="item[element.name]" *ngSwitchDefault>
+      </div>
+      <ng-template #idInput>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [name]="element.name" [(ngModel)]="item[element.name]" readonly>
+        </div>
+      </ng-template>
+      <ng-content select="[form]"></ng-content>
+    </div>
+    <div class="form-group row">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <ng-content select="[buttons]"></ng-content>
+    </div>
+  </form>
+</div>

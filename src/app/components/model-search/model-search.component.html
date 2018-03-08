@@ -1,0 +1,16 @@
+<form>
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+      <select name="property" [(ngModel)]="property" name="property" class="form-control">
+        <option selected value="any">Any</option>
+        <option class="text-capitalize" *ngFor="let item of properties" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md-8 mb-7">
+      <input type="text" class="form-control" [placeholder]="property" required [(ngModel)]="text" name="text">
+    </div>
+    <div class="col-md-2 mb-2">
+      <button class="btn btn-primary form-control" (click)="onSubmitted()">Search</button>
+    </div>
+  </div>
+</form>
