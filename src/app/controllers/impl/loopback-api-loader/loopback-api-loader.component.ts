@@ -48,7 +48,6 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
   private loadModels() {
     if (!LoopbackApiLoaderComponent.sdkModels) {
       LoopbackApiLoaderComponent.sdkModels = this.models;
-      console.log(this.models);
     }
   }
 
@@ -72,7 +71,7 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
   private getFilter() {
     const filter = { limit: this.loaderConfig.limit, skip: this.loaderConfig.limit * this.loaderPage };
 
-    if (this.loaderSearch) {
+    if (this.loaderSearch && this.loaderSearch.property !== '') {
       const search = this.loaderSearch;
       const name = search.property;
       if (search.property !== 'any') {
@@ -82,7 +81,6 @@ export class LoopbackApiLoaderComponent<Model> implements GenericApiLoader {
         filter['where'] = this.getWhereAny(search.properties, search.value);
       }
     }
-
     return filter;
   }
 

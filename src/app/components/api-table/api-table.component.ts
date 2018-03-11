@@ -43,7 +43,10 @@ export class ApiTableComponent implements OnInit {
   }
 
   getProps() {
-    return this.tableModel.constructor.getModelDefinition().properties;
+    if (this.tableModel)
+      return this.tableModel.constructor.getModelDefinition().properties;
+    else
+      return {};
   }
 
 
